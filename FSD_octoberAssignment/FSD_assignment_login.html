@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Readers's Club Log In page</title>
+	<script>
+function validateLogin(){
+	var email = document.getElementById('verify_email');
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if (!filter.test(email.value)) {
+    alert('Please provide a valid email address');
+    email.focus;
+    return false;
+ }
+ var passwords=document.getElementById('verify_password');
+ 	if(passwords.value==""){
+ 		alert('Password field cannot be empty');
+ 		return false;
+ 	}
+ 	var c_passwords=document.getElementById('verify_cpassword');
+ 	if(c_passwords.value==""){
+ 		alert('Confirm password field cannot be empty');
+ 		return false;
+ 	}
+ 	if(passwords.value!=c_passwords.value){
+ 		alert('Password and confirm password do not match!');
+ 		return false;
+ 	}
+ }
+	</script>
+	<style type="text/css">
+	body {
+background-image: url("images/bg_image.jfif");
+background-color: grey;
+opacity:50%;
+}
+* {
+  box-sizing: border-box;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  padding: 8px;
+  margin-bottom: 7px;
+  background-color: black;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.menu li:hover {
+  background-color: red;
+}
+.flex_box{
+	display:flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+.aside {
+  background-color: #33b5e5;
+  padding: 15px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.media_queries{
+  background-color:black;
+  color: #ffffff;
+  text-align: left;
+  font-size: 17px;
+  padding: 9px;
+}
+		#main-wrapper{
+	width:500px;
+	margin:0 auto;
+	background:white;
+	padding:5px;
+	border-radius:10px;
+	border:2px solid #2980b9;
+}
+#main-wrapper1{
+	width:99%;
+	margin:0 auto;
+	background:white;
+	padding:5px;
+	border-radius:10px;
+	border:2px solid #2980b9;
+}
+.avatar{
+	width:150px;
+	text-align: center;
+}
+.logo{
+	width:100px;
+	height:60px;
+}
+.title{
+  background-color:brown;
+  color: #ffffff;
+  padding: 5px;
+  font-size:45px;
+}
+.myform{
+	width:450px;
+	margin:0 auto;
+}
+.inputvalues{
+	width:430px;
+	margin:0 auto;
+	padding:5px;
+}
+.inputvalues_pg{
+	width:230px;
+	margin:0 auto;
+	padding:5px;
+}
+#login_btn{
+	margin-top: 10px;
+	background-color: #27ae60;
+	padding:5px;
+	color:white;
+	width:100%;
+	text-align: center;
+	font-size: 18px;
+	font-weight:bold;
+}
+#register_btn{
+	margin-bottom: 20px;
+	margin-top: 10px;
+	background-color: #2980b9;
+	padding:5px;
+	color:white;
+	width:100%;
+	text-align: center;
+	font-size: 18px;
+	font-weight:bold;
+}
+#signup_btn{
+	margin-top: 10px;
+	background-color: #27ae60;
+	padding:5px;
+	color:white;
+	width:100%;
+	text-align: center;
+	font-size: 18px;
+	font-weight:bold;
+}
+#back_btn{
+	margin-top: 10px;
+	background-color:#2980b9;
+	padding:5px;
+	color:white;
+	width:30%;
+	text-align: center;
+	font-size: 12px;
+	font-weight:bold;
+}
+@media only screen and (min-width: 600px) {
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width: 768px) {
+  [class*="col-"] {
+    width: 100%;
+  }
+}
+	</style>
+</head>
+<body>
+	<div class="flex_box">
+	<div class="title">
+		<p id="mouse_event"><img src="images/logo.jpg" class="logo"><u><b>  Book Reader's Club</b></u></p>
+	</div>
+	<br>
+<br>
+	<div class="row">
+  <div class="col-3 menu">
+    <ul>
+    <li>Authors</li>
+    <li>Popular Series</li>
+    <li>Genere-wise Books</li>
+    <li>Club Members</li>
+    <li>Reminders</li>
+    </ul>
+  </div>
+		<br>
+		<br>
+		<br>
+	<div id="main-wrapper">
+		<center><h2>Login Form!</h2>
+		<img src="images/3.png" class="avatar"/>
+	</center>
+<form class="myform" method="post" onsubmit="return validateLogin()">
+	<label><b>Email Id:</b></label><br>
+	<input type="text" id="verify_email" name="emailid" class="inputvalues" placeholder="example@example.com"><br>
+	<label><b>Password:</b></label><br>
+	<input type="password" id="verify_password" name="password" class="inputvalues" placeholder="Enter your password"><br>
+	<label><b>Confirm password:</b></label><br>
+	<input type="password" name="cpassword" id="verify_cpassword" class="inputvalues" placeholder="confirm your password"><br>
+	<input type="submit" id="login_btn" name="login" value="Login"/><br>
+	<br>
+</form>
+</div>
+<br>
+<div class="media_queries">
+	<p>Features present in webpage--
+	<ul>
+		<li>CSS & HTML</li>
+		<li>Form validation (JavaScript, DOM & event handling)</li>
+		<li>Flex-Box</li>
+		<li>Media-queries</li>
+	</ul>
+  <p>You can resize the window to observe the content responding to <u>media queries</u></p>
+</div>
+</div>
+</div>
+<script>
+	document.getElementById('mouse_event').addEventListener("mouseover", mouseOver);
+document.getElementById('mouse_event').addEventListener("mouseout", mouseOut);
+function mouseOver(){
+	document.getElementById('mouse_event').style.color="lightblue";
+	document.getElementById('mouse_event').style.fontSize="80px";
+}
+function mouseOut(){
+	document.getElementById('mouse_event').style.color="white";
+	document.getElementById('mouse_event').style.fontSize="45px";
+}
+</script>
+</body>
+</html>
